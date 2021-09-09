@@ -28,36 +28,37 @@ img {
 }
 
 /* Nav Bar	*/
-nav {
-	position: absolute;
+.navbar{
+	position: fixed;
 	width: 100%;
 	height: 50px;
 	background-color: transparent;
+	opacity: .95;
 	line-height: 50px;
 	font-size: 1.5rem;
 	z-index: 5;
+	transition: 0.3s ease-in-out;
 }
 
 nav ul{
 	float: right;
 	margin-right: 30px;
-  }
-  nav ul li{
+}
+nav ul li{
 	list-style-type: none;
 	display: inline-block;
 	transition: 0.7s all;
-  }
-  nav ul li:hover{
+}
+nav ul li:hover{
 	background-color:#088;
-  }
-  nav ul li a{
+}
+nav ul li a{
 	text-decoration: none;
 	color: #fff;
 	padding: 30px;
-  }
+}
 
 /* End of Nav Bar	*/
-
 
 /* Hero Section */
 #hero {
@@ -89,24 +90,29 @@ nav ul{
 	justify-content: flex-start;
 }
 
+/* giai thich phan nay 
+	text_reveal_box se chay truoc, sau do text_reveal se xuat hien (hien ra) sau
+*/
+
+
 #hero h1 {
 	display: block;
 	width: fit-content;
 	font-size: 6rem;
 	position: relative;
 	color: transparent;
-	animation: text_reveal .5s ease forwards;
-	animation-delay: 1s;
+	animation: text_reveal .5s ease forwards;	/* forwards dung de giu lai sau khi */
+	animation-delay: 1s;		/* co khi deo can dong nay */
 }
 
-#hero h1:nth-child(1) {
+#hero h1:nth-child(1) {				/* cai nay danh cho chu "Hello," */
 	animation-delay: 1s;
 }
-#hero h1:nth-child(2) {
+#hero h1:nth-child(2) {				/* cai nay danh cho chu "My Name Is" */
 	animation-delay: 2s;
 }
 #hero h1:nth-child(3) {
-	animation: text_reveal_name 0.5s ease forwards;
+	animation: text_reveal_name 0.5s ease forwards; 	/* cai nay danh cho chu "Khoa" */
 	animation-delay: 3s;
 }
 
@@ -118,7 +124,7 @@ nav ul{
 	width: 0;
 	background-color: crimson;
 	animation: text_reveal_box 1s ease;
-	animation-delay: 1s;
+	animation-delay: 1s; 	/* co khi deo can dong nay */
 }
 
 #hero h1:nth-child(1) span {
@@ -151,6 +157,92 @@ nav ul{
 }
 /* End of Hero Section */
 
+/* About */
+#about {
+	flex-direction: row;
+}
+
+#about .about {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+#about .about-title {
+	position: relative;
+	font-size: 4.5rem;
+	font-weight: 500;
+	margin-top: 20px;
+	margin-bottom: 0;
+	margin-right: auto;
+	margin-left: auto;
+	text-transform: uppercase;
+	color: black;
+	text-align: center
+}
+
+#about .about-title span {
+	color: crimson;
+}
+
+.about-main {
+	position: relative;
+	justify-content: center;
+	max-width: 1000px;
+}
+
+.avatar {
+}
+
+.avatar img{
+	position: relative;
+	float: left;
+	width: 250px;
+	height: 250px;
+	margin: 20px 50px;
+	border: 2px solid lightcoral;
+	border-radius: 35%;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+	transition: width 2s, height 2s, transform 1.5s;
+}
+
+.avatar img:hover {
+	width: 350px;
+	height: 350px;
+	transform: rotate(360deg);
+}
+
+.text {	
+	display: inline;
+}
+
+.text p {
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	padding: 50px;
+}
+
+#about .about-button {
+	padding: 10px 30px;
+	color: crimson;
+	background-color: transparent;
+	border: 2px solid crimson;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	transition: .3s ease;
+	position: relative;
+	justify-content: center;
+}
+
+#about .about-button:hover {
+	color: white;
+	background-color: crimson;
+}
+
+/* End of About */
+
+
 /* Start of Service Section */
 #service {
 }
@@ -159,13 +251,14 @@ nav ul{
 	flex-direction: column;
 	text-align: center;
 	margin: 0 auto;
-	padding: 100px 0;
 	max-width: 1500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 #service .service-title {
 	font-size: 4.5rem;
-	font-weight: 4rem;
+	font-weight: 500;
 	margin: 0 auto;
 	text-transform: uppercase;
 	color: black;
@@ -183,7 +276,7 @@ nav ul{
 	margin-left:auto;
 	margin-right:auto;
 	line-height: 2.5rem;
-	font-weight: 300px;
+	font-weight: 300;
 	letter-spacing: .05rem;
 }
 
@@ -198,7 +291,7 @@ nav ul{
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 30px;
+	padding: 25px;
 	border-radius: 10px;
 	background-image: url("./img/img-3.jpg");
 	background-repeat: no-repeat;
@@ -206,7 +299,20 @@ nav ul{
 	margin: 10px 5%;
 	color: white;
 	margin: 10px;
-	z-index: 2;
+	z-index: 1;
+	position: relative;
+}
+
+#service .service-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: .3;
+	z-index: -1;
 }
 
 #service .service-item h2 {
@@ -226,7 +332,7 @@ nav ul{
 .service .service-bottom .icon {
 	height: 80px;
 	width: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 /*
@@ -249,7 +355,7 @@ nav ul{
 #timeline .timeline-title {
 	position: relative;
 	font-size: 4.5rem;
-	font-weight: 4rem;
+	font-weight: 500;
 	margin: 10 auto;
 	text-transform: uppercase;
 	color: black;
@@ -288,7 +394,7 @@ nav ul{
 	position: absolute;
 	width: 25px;
 	height: 25px;
-	right: -17px;
+	right: -15.5px;
 	background-color: white;
 	border: 3px solid crimson;
 	top: 15px;
@@ -355,7 +461,7 @@ nav ul{
 
 #contact .contact-title {
 	font-size: 4.5rem;
-	font-weight: 4rem;
+	font-weight: 500;
 	margin: 10 auto;
 	text-transform: uppercase;
 	color: black;
@@ -464,11 +570,14 @@ nav ul{
 	height: 50px;
 	width: 50px;
 	margin: 0 5px;
+	filter: grayscale(100%);
 }
 
 #copyright .item:hover {
 	height: 60px;
 	width: 60px;
+	filter: grayscale(0%);
+	transition: .3s ease;
 }
 
 #copyright p {
@@ -489,5 +598,167 @@ nav ul{
 
 @keyframes text_reveal_name {
 	100% {color: crimson; font-weight: 500px;}
+}
+
+@media only screen and (max-width: 810px) {
+	#about .about-button {
+		margin-left: 50px;
+	}
+}
+
+@media only screen and (min-width: 1201px) {
+	#menuToggle input
+	{
+		display: block;
+		width: 50px;
+		height: 32px;
+		position: absolute;
+		top: -36px;
+		cursor: pointer;
+		opacity: 0; /* hide this */
+		z-index: 0; /* and place it over the hamburger */
+	}
+}
+
+
+@media only screen and (max-width: 1200px) {
+	#menuToggle {
+		display: block;
+		position: relative;
+		top: 50px;
+		left: 50px;
+		z-index: 1;
+	}
+
+
+	#menu
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		margin: -100px 0 0 -50px;
+		padding: 50px;
+		padding-top: 125px;
+		
+		background: rgb(31, 30, 30);
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
+		/* to stop flickering of text in safari */
+		
+		transform-origin: 0% 0%;
+		transform: translate(100%);
+		
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	}
+
+	#menu li {
+		padding: 10px 0;
+		font-size: 22px;
+	}
+
+
+	#menuToggle a {
+		text-decoration: none;
+		color: white;	
+		transition: color 0.3s ease;
+	}
+
+	#menuToggle a:hover {
+	}
+
+
+	#menuToggle input
+	{
+		display: block;
+		width: 50px;
+		height: 32px;
+		position: absolute;
+		top: -36px;
+
+		cursor: pointer;
+
+		opacity: 0; /* hide this */
+		z-index: 100; /* and place it over the hamburger */
+	}
+	
+
+	.line {
+		display: block;
+		position: absolute;
+		top: -36px;
+	}
+
+	/*
+	* Just a quick hamburger
+	*/
+	#menuToggle span {
+		display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		background: ghostwhite;
+		border-radius: 3px;
+		
+		z-index: 1;
+		
+		transform-origin: 4px 0px;
+		
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+					background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+					opacity 0.9s ease;
+	}
+
+	#menuToggle span:first-child {
+		transform-origin: 0% 0%;
+	}
+
+	#menuToggle span:nth-last-child(2) {
+		transform-origin: 0% 100%;
+	}
+
+	/* 
+	* Transform all the slices of hamburger
+	* into a crossmark.
+	*/
+	#menuToggle input:checked ~ span {
+		opacity: 1;
+		transform: rotate(45deg) translate(-2px, -1px);
+		background: ghostwhite;
+	}
+
+	/*
+	* But let's hide the middle one.
+	*/
+	#menuToggle input:checked ~ span:nth-last-child(3) {
+		opacity: 0;
+		transform: rotate(0deg) scale(0.2, 0.2);
+	}
+
+	/*
+	* Ohyeah and the last one should go the other direction
+	*/
+	#menuToggle input:checked ~ span:nth-last-child(2) {
+		transform: rotate(-45deg) translate(0, -1px);
+	}
+
+	/*
+	* Make this absolute positioned
+	* at the top left of the screen
+	*/
+
+
+	/*
+	* And let's slide it in from the left
+	*/
+
+
+	#menuToggle input:checked ~ ul {
+		transform: none;
+	}
 }
 

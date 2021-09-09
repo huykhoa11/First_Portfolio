@@ -4,22 +4,42 @@
   <meta charser="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
+
   <title>Practice Website</title>
 </head>
 <body>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-  <script src="./app.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
 
+  <script src="./app.js"></script>
+  <!-- Navbar Section-->
   <div class="navbar">
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#service">Programming</a></li>
-        <li><a href="#timeline">TimeLine</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+    <div class="bar">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox">
+            
+          <ul id="menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#service">Programming</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="line">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </div>
+      </nav>
+    </div>
   </div>
+  <!-- End of Navbar Section-->
+
   <!--Hero Section-->
   <section id="hero">
     <div class="hero container">
@@ -35,6 +55,28 @@
   </section>
   <!--End of Hero Section-->
 
+  <!-- About me Section -->
+  <section id ="about">
+    <div class="about container">
+      <div class="about-main">
+        <h1 class="about-title">Ab<span>o</span>ut M<span>e</span></h1>
+        <div class="avatar">
+          <img src="./img/duck.png">
+          <div class="text">
+            <p>Hello, my full name is Tran Huy Khoa. I come from Vietnam, the South East Asia country.
+              I'm 23 years old this year and studying at Osaka Sangyo University. I'm going to graduate in April 2023.
+              <br><br>I'm heading to become a Web Developer in the future. So i builed this Portfolio Website to introduce myself, 
+              also for practicing my HTML, CSS and JS skills. Thanks for coming and reading this bullshit long text.
+            </p>
+          </div>
+        </div>  
+        <a href="https://github.com/huykhoa11" type="button" class="about-button">My Github >></a>    
+      </div>
+    </div>
+  </section>
+  <!-- End of About me Section -->
+
+
   <!-- Service Section -->
   <section id="service">
     <div class="service container">
@@ -46,22 +88,22 @@
       <div class="service-bottom">
         <div class="service-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/programming-flag.png"/></div>
-          <h2>Language</h2>
+          <h2>Ruby</h2>
           <p>This Programming language is fun to learn. Lets learn together.</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/programming-flag.png"/></div>
-          <h2>Language</h2>
+          <h2>Java</h2>
           <p>This Programming language is fun to learn. Lets learn together.</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/programming-flag.png"/></div>
-          <h2>Language</h2>
+          <h2>Python</h2>
           <p>This Programming language is fun to learn. Lets learn together.</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/programming-flag.png"/></div>
-          <h2>Language</h2>
+          <h2>C</h2>
           <p>This Programming language is fun to learn. Lets learn together.</p>
         </div>
       </div>
@@ -73,7 +115,7 @@
   <section id="timeline">
     <h1 class="timeline-title">T<span>i</span>mel<span>i</span>ne</h1>
     <div class="timeline-main">
-      <div class="card left">
+      <div data-aos="fade-left" class="card left">
         <div class="content">
           <h2>April 2017</h2>
           <p>Went to Japan in the fist time.<br>Spent 2 years in Japanese Language School.</p>
@@ -165,7 +207,6 @@
   </section>
   <!-- End of Copyright Section -->
 
-  
 </body>
 
 </html>
